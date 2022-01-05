@@ -19,18 +19,9 @@ export default function App() {
           <Header />
           <main className={styles.main}>
             <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/login">
-                <Auth />
-              </Route>
-              <Route path="/register">
-                <Auth isSigningUp />
-              </Route>
-              <Route path="/confirm-email">
-                <ConfirmEmail />
-              </Route>
+              <PrivateRoute exact path="/">
+                  <Home />
+              </PrivateRoute>
               <PrivateRoute path="/notes/:id/edit">
                 <EditNote />
               </PrivateRoute>
@@ -40,6 +31,17 @@ export default function App() {
               <PrivateRoute exact path="/notes">
                 <Notebook />
               </PrivateRoute>
+
+              <Route path="/login">
+                <Auth />
+              </Route>
+              <Route path="/register">
+                <Auth isSigningUp />
+              </Route>
+              <Route path="/confirm-email">
+                <ConfirmEmail />
+              </Route>
+
             </Switch>
           </main>
         </Router>

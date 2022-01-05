@@ -20,6 +20,7 @@ export default function Notebook() {
       await deleteNote(note.id);
   };
 
+
   return (
     <>
       <h2>Notebook</h2>
